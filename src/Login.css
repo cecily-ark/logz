@@ -1,0 +1,123 @@
+.container{
+    display:flex;
+    max-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color:#fff;
+    border-radius: 5px 0 0 5px;
+}
+
+.content{
+    flex: 2;
+    padding: 20px;
+}
+
+.logo{
+    max-width: 100%;
+    height: auto;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group{
+    margin-bottom: 15px;
+}
+
+.input-group label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-group input{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.input-group .remember{
+    display: flex;
+}
+
+.input-group .remember input[type="checkbox"] {
+    webkit-appearance: none;
+    appearance: nonr;
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 0.15em;
+    margin-right: 0.5em;
+    border: 0.15em;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.input-group .remember label {
+    margin-left: 5px;
+    color: #555;
+}
+
+.input-group .forgot-password{
+    display: flex;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.input-group .forgot-password button{
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.input-group button[type='submit']{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-group button[type='submit']:hover{
+    background-color: #1565C0;
+    ;
+}
+
+@media screen and (max-width: 900px) {
+    .container{
+        flex-direction: column;
+        max-width: 500px;
+    }
+
+    .sidebar {
+        border-radius: 5px 5px 0 0;
+    }
+}
