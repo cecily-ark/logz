@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './Registration.css';
+import './Signup.css';
 
 
-function Registration() {
+function Registration(props) {
         const[firstName, setFirstName] = useState('');
         const[middleName, setMiddleName] = useState('');
         const[surname, setSurname] = useState('');
@@ -81,13 +81,10 @@ function Registration() {
                 <label htmlFor='acceptTerms'>I accept all terms and conditions</label>
             </div>
             <div className='input-group login'>
-                <p>
-                    Already have an account?{' '}
-                    <button type='button' onClick={handleLogin}>Login</button>
-                </p>
+            <button type='submit'>Create Account</button>
             </div>
             <div className='input-group'>
-                <button type='submit'>Create Account</button>
+                <button className='link-btn' onClick={() => props.onFormSwitch('login')}>Already have an account? Login here</button>
             </div>
         </form>
     </div>

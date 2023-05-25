@@ -1,27 +1,22 @@
 .container{
-    display:flex;
-    max-height: 100vh;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 2rem 4rem;
+    box-sizing: border-box;
 }
 
 .sidebar{
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    color:#fff;
-    border-radius: 5px 0 0 5px;
+    height: 50rem;
+    width: 50rem;
 }
 
 .content{
-    flex: 2;
-    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 50rem;
+    width: 50rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 4rem;
 }
 
 .logo{
@@ -34,6 +29,12 @@ h2{
     margin-bottom: 20px;
     color: #333;
 }
+
+.login-details {
+    display: flex;
+    text-align: justify;
+    flex-direction: column;
+  }
 
 form{
     display: flex;
@@ -48,7 +49,6 @@ form{
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #555;
 }
 
 .input-group input{
@@ -63,26 +63,12 @@ form{
     display: flex;
 }
 
-.input-group .remember input[type="checkbox"] {
-    webkit-appearance: none;
-    appearance: nonr;
-    width: 1.6em;
-    height: 1.6em;
-    border-radius: 0.15em;
-    margin-right: 0.5em;
-    border: 0.15em;
-    outline: none;
-    cursor: pointer;
-
-}
-
-.input-group .remember label {
+.input-group .remember label{
     margin-left: 5px;
     color: #555;
 }
 
 .input-group .forgot-password{
-    display: flex;
     text-align: right;
     margin-top: 10px;
 }
@@ -107,17 +93,16 @@ form{
 }
 
 .input-group button[type='submit']:hover{
-    background-color: #1565C0;
-    ;
+    background-color: #555;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px){
     .container{
         flex-direction: column;
         max-width: 500px;
     }
 
-    .sidebar {
+    .sidebar{
         border-radius: 5px 5px 0 0;
     }
 }
