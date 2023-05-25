@@ -1,108 +1,161 @@
-.container{
-    display: flex;
-    padding: 2rem 4rem;
-    box-sizing: border-box;
+.container {
+  display: flex;
+  padding: 2rem 4rem;
+  box-sizing: border-box;
 }
 
-.sidebar{
-    height: 50rem;
-    width: 50rem;
+.sidebar {
+  height: 50rem;
+  width: 50rem;
+  background-image: url(/public/logo.jpg);
 }
 
-.content{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    height: 50rem;
-    width: 50rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 1rem 4rem;
+.content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 50rem;
+  width: 50rem;
+  color: black;
+  /* background-color; */
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem 4rem;
+  align-items: center;
+  /* padding-top: 12rem; */
+  font-weight: 10;
+}
+.last {
+  display: flex;
+  justify-content: space-between;
+}
+.remember {
+  display: flex;
+}
+.logo {
+  max-width: 100%;
+  height: auto;
 }
 
-.logo{
-    max-width: 100%;
-    height: auto;
-}
-
-h2{
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .login-details {
-    display: flex;
-    text-align: justify;
+  /* background: rgba(0, 0, 0, 0.4); */
+  background: transparent;
+  display: flex;
+  text-align: justify;
+  flex-direction: column;
+  /* background-color: #555; */
+  padding: 1rem 2rem;
+  width: 100%;
+  border-radius: 0.2rem;
+}
+.login-details h2 {
+  color: black;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+.form-input label {
+  margin-top: 2rem;
+}
+.form-input input {
+  height: 3rem;
+  background-color: transparent;
+  outline: none;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+.input-group {
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-group .remember {
+  display: flex;
+}
+
+.input-group .remember label {
+  margin-left: 5px;
+  color: black;
+}
+
+.input-group .forgot-password {
+  text-align: right;
+  margin-top: 10px;
+}
+.forgot-password button {
+  padding: 1rem 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: black;
+}
+.input-group .forgot-password button {
+  background: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.input-group button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.link-btn {
+  width: 129%;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+
+  height: 2rem;
+  background-color: transparent;
+  color: black;
+  outline: none;
+  border: none;
+}
+.input-group button[type="submit"]:hover {
+  background-color: #555;
+}
+.input-group a {
+  color: skyblue;
+}
+@media screen and (max-width: 900px) {
+  .container {
     flex-direction: column;
+    max-width: 500px;
   }
 
-form{
-    display: flex;
-    flex-direction: column;
-}
-
-.input-group{
-    margin-bottom: 15px;
-}
-
-.input-group label{
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.input-group input{
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.input-group .remember{
-    display: flex;
-}
-
-.input-group .remember label{
-    margin-left: 5px;
-    color: #555;
-}
-
-.input-group .forgot-password{
-    text-align: right;
-    margin-top: 10px;
-}
-
-.input-group .forgot-password button{
-    background: none;
-    border: none;
-    color: blue;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.input-group button[type='submit']{
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.input-group button[type='submit']:hover{
-    background-color: #555;
-}
-
-@media screen and (max-width: 900px){
-    .container{
-        flex-direction: column;
-        max-width: 500px;
-    }
-
-    .sidebar{
-        border-radius: 5px 5px 0 0;
-    }
+  .sidebar {
+    border-radius: 5px 5px 0 0;
+    color: red;
+  }
 }
