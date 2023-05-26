@@ -38,7 +38,7 @@ function Registration() {
       <section className="create-account">
         <h2>Create Account</h2>
         <div className="account-details">
-          <form action="" className="input-form" onSubmit={handleLogin}>
+          <form action="" className="input-form" onSubmit={handleRegister}>
             <div className="names">
               <div className="first-name">
                 <label htmlFor="">first name</label>
@@ -96,7 +96,7 @@ function Registration() {
             <div className="accept">
               <input
                 type="checkbox"
-                value={acceptTerms}
+                checked={acceptTerms}
                 onClick={(e) => setAcceptTerms(e.change.value)}
               />
               <label htmlFor="">
@@ -107,7 +107,10 @@ function Registration() {
           <div className="submit-button">
             <button className="proceed">CREATE ACCOUNT</button>
           </div>
-          <footer className="goto-login">
+          <footer
+            className="goto-login"
+            onClick={() => props.onFormSwitch("login")}
+          >
             Already an account? <a href="">Login</a>
           </footer>
         </div>
