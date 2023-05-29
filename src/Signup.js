@@ -1,94 +1,86 @@
 import React, { useState } from 'react';
-import './Signup.css';
+import "./Signup.css";
 
+function Signup(props) {
+    const [firstname, setFirstname] = useState(" ");
+    const [middlename, setMiddlename] = useState(" ");
+    const [surname, setSurname] = useState(" ");
+    const [email, setEmail] = useState(" ");
+    const [registerAs, setRegisterAs] = useState(" ");
+    const [licenseNumber, setLicenseNumber] = useState(" ");
+    const [password, setPassword] = useState(" ");
+    const [confirmPassword, setConfirmPassword] = useState(" ");
+    const [acceptTerms, setAcceptTerms] = useState(" ");
 
-function Registration(props) {
-        const[firstName, setFirstName] = useState('');
-        const[middleName, setMiddleName] = useState('');
-        const[surname, setSurname] = useState('');
-        const[email, setEmail] = useState('');
-        const[registerAs, setRegisterAs] = useState('');
-        const[licenseNumber, setLicenseNumber] = useState('');
-        const[password, setPassword] = useState('');
-        const[confirmPassword, setConfirmPassword] = useState('');
-        const[acceptTerms, setAcceptTerms] = useState('');
+    const handleRegister = (e) => {
+        e.preventDefault();
+        //Handle registration logic here
+        console.log("Register clicked");
+        console.log("First Name:", firstname);
+        console.log("Middle Name:", middlename);
+        console.log("Surname:", surname);
+        console.log("Email:", email);
+        console.log("Register As:", registerAs);
+        console.log("License Number:", licenseNumber);
+        console.log("Password:", password);
+        console.log("Confirm Password:", confirmPassword);
+        console.log("Accept Terms:", acceptTerms);
+    };
 
-
-        const handleRegister = (e) => {
-            e.preventDefault();
-            //Handle registration logic here
-            console.log('Register clicked');
-             console.log('First Name:', firstName);
-             console.log('Middle Name:', middleName);
-             console.log('Surname:', surname);
-             console.log('Email:', email);
-             console.log('Register As:', registerAs);
-             console.log('License Number:', licenseNumber)
-             console.log('Password:', password);
-             console.log('Confirm Password:', confirmPassword);
-             console.log('Accept Terms', acceptTerms);
-        };
-
-        const handleLogin = () => {
-            //Handle login here
-            console.log('Already have an account? Login clicked');
-        };
-
-
+    const handleLogin = (e) => {
+        //Handle login here
+        console.log("Already have an account? Login clicked");
+    };
   return (
-    <div className='container'>
-        <h2>Create Account</h2>
-        <form onSubmit={handleRegister}>
-            <div className='input-group'>
-                <label htmlFor='firstName'>First Name:</label>
-                <input type='text' id='firstName' name='firstName' value={firstName} onChange={(e) =>setFirstName(e.target.value)} required />
+    <div className='contain1'>
+        <section>
+            <img src={logo2} alt='Logo2' />
+        </section>
+        <section className='create-account'>
+            <h2>Create Account</h2>
+            <div className='account-details'>
+                <form action='' className='input-form' onSubmit={handleRegister}>
+                   <div className='names'>
+                      <div className='first-name'>
+                          <label htmlFor='firstname'>First Name</label>
+                          <input type='text' value={firstname} onChange={(e) => setFirstname(e.target.value)} />
+                       </div>
+                       <div className='middlename'>
+                          <label htmlFor='middlename'>Middle Name</label>
+                          <input type='text' value={middlename} onChange={(e) => setFirstname(e.target.value)} />
+                       </div>
+                   </div>
+                   <label htmlFor='surname'>Surname</label>
+                   <input type='text' value={surname} onChange={(e) => setSurname(e.target.value)} />
+                  
+                   <label htmlFor='email'>Email Address</label>
+                   <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} />
+                  
+                   <div className='for-password'>
+                       <div className='password'>
+                          <label htmlFor='password'>Password</label>
+                          <input type='text' value={password} onChange={(e) => setPassword(e.target.value)} />
+                       </div>
+                       <div className='confirm-password'>
+                          <label htmlFor='confirmpassword'>Confirm Password</label>
+                          <input type='text' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                       </div>
+                   </div>
+                   <div>
+                      <input type='checkbox' checked={acceptTerms} onClick={(e) => setAcceptTerms(e.change.value)} />
+                      <label>I accept all <a href=''>terms & condition</a></label>
+                   </div>
+                </form>
+                <div>
+                    <button className='proceed'>CREATE ACCOUNT</button>
+                </div>
+                <footer className='goto-login' onClick={() => props.onFormSwitch("login")}>
+                    Already have an account? <a href=''>Login</a>
+                </footer>
             </div>
-            <div className='input-group'>
-                <label htmlFor='middleName'>Middle Name:</label>
-                <input type='text' id='middleName' name='middleName' value={middleName} onChange={(e) =>setMiddleName(e.target.value)} />
-            </div>
-            <div className='input-group'>
-                <label htmlFor='surname'>Surname:</label>
-                <input type='text' id='surname' name='surname' value={surname} onChange={(e) =>setSurname(e.target.value)} required />
-            </div>
-            <div className='input-group'>
-                <label htmlFor='email'>Email Address:</label>
-                <input type='email' id='email' name='email' value={email} onChange={(e) =>setEmail(e.target.value)} required />
-            </div>
-            <div className='input-group'>
-                <label htmlFor='registerAd'>Register As:</label>
-                <select id='registerAs' name='registerAs' value={registerAs} onChange={(e) => setRegisterAs(e.target.value)} required>
-                    <option value="">Select an option</option>
-                    <option value="option1">Option1</option>
-                    <option value="option2">Option2</option>
-                    <option value="option3">Option3</option>
-                </select>
-            </div>
-            <div className='input-group'>
-                <label htmlFor='licenseNumber'>License Number</label>
-                <input type='text' id='licenseNumber' name='licenseNumber' value={licenseNumber} onChange={(e) =>setLicenseNumber(e.target.value)} />
-            </div>
-            <div className='input-group'>
-                <label htmlFor='password'>Password</label>
-                <input type='password' id='password' name='password' value={password} onChange={(e) =>setPassword(e.target.value)} required />
-            </div>
-            <div className='input-group'>
-                <label htmlFor='confirmPassword'>Confirm Password</label>
-                <input type='password' id='confirmPassword' name='confirmPassword' value={confirmPassword} onChange={(e) =>setConfirmPassword(e.target.value)} required />
-            </div>
-            <div className='input-group'>
-                <input type='checkbox' id='acceptTerms' name='acceptTerms' checked={acceptTerms} onChange={() =>setAcceptTerms(!acceptTerms)} required />
-                <label htmlFor='acceptTerms'>I accept all terms and conditions</label>
-            </div>
-            <div className='input-group login'>
-            <button type='submit'>Create Account</button>
-            </div>
-            <div className='input-group'>
-                <button className='link-btn' onClick={() => props.onFormSwitch('login')}>Already have an account? Login here</button>
-            </div>
-        </form>
+        </section>
     </div>
   );
 };
 
-export default Registration;
+export default Signup;

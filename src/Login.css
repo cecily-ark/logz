@@ -7,6 +7,9 @@
 .sidebar{
     height: 50rem;
     width: 50rem;
+    background-image: url(/public/Logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .content{
@@ -15,12 +18,25 @@
     flex-direction: column;
     height: 50rem;
     width: 50rem;
+    color: black;
+    background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 1rem 4rem;
+    align-items: center;
+    font-weight: 10;
+}
+
+.last{
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember{
+    display: flex;
 }
 
 .logo{
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
 }
 
@@ -31,18 +47,41 @@ h2{
 }
 
 .login-details {
+    background: transparent;
     display: flex;
     text-align: justify;
     flex-direction: column;
+    padding: 1rem 2rem;
+    width: 100%;
+    border-radius: 0.2rem;
   }
 
-form{
+  .login-details h2 {
+    color: black;
+  }
+
+.form-input{
     display: flex;
     flex-direction: column;
 }
 
+.form-input label {
+    margin-top: 2rem;
+}
+
+.form-input input {
+    height: 3rem;
+    background-color: transparent;
+    outline: none;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+}
+
 .input-group{
-    margin-bottom: 15px;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 .input-group label{
@@ -73,7 +112,15 @@ form{
     margin-top: 10px;
 }
 
-.input-group .forgot-password button{
+.forgot-password button{
+    padding: 1rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: black;
+}
+
+.input-group .forgot-password button {
     background: none;
     border: none;
     color: blue;
@@ -85,18 +132,34 @@ form{
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    background-color: #333;
+    background-color: blue;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
+.link-btn {
+    width: 129%;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+
+    height: 2rem;
+    background-color: transparent;
+    color: black;
+    outline: none;
+    border: none;
+}
+
 .input-group button[type='submit']:hover{
     background-color: #555;
 }
 
-@media screen and (max-width: 900px){
+.input-group a {
+    color: skyblue;
+}
+
+@media screen and (max-width: 600px){
     .container{
         flex-direction: column;
         max-width: 500px;
@@ -104,5 +167,6 @@ form{
 
     .sidebar{
         border-radius: 5px 5px 0 0;
+        color: red;
     }
 }
