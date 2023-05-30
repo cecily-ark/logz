@@ -4,7 +4,7 @@ import logo from './asset/Logo.png';
 
 
 function Login(props) {
-    const [username, setUsername] = useState(" ");
+    const [email, setEmail] = useState(" ");
     const [password, setPassword] = useState(" ");
     const [rememberMe, setRememberMe] = useState(false);
 
@@ -38,7 +38,7 @@ function Login(props) {
 
                 <form className='form-input' onSubmit={handleLogin}>
                     <label htmlFor='username'>Email address</label>
-                    <imput type="email" id="email" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+                    <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
                     <label htmlFor='password'>Password</label>
                     <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' placeholder='*******' name='password' />

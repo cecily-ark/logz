@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./Signup.css";
+import logo2 from './asset/logo2.png';
 
 function Signup(props) {
     const [firstname, setFirstname] = useState(" ");
@@ -47,7 +48,7 @@ function Signup(props) {
                        </div>
                        <div className='middlename'>
                           <label htmlFor='middlename'>Middle Name</label>
-                          <input type='text' value={middlename} onChange={(e) => setFirstname(e.target.value)} />
+                          <input type='text' value={middlename} onChange={(e) => setMiddlename(e.target.value)} />
                        </div>
                    </div>
                    <label htmlFor='surname'>Surname</label>
@@ -55,6 +56,21 @@ function Signup(props) {
                   
                    <label htmlFor='email'>Email Address</label>
                    <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} />
+                  
+                   <div className='reg'>
+                       <div className='register'>
+                          <label htmlFor="registerAs">Register As:</label>
+                          <select id='registerAs' name='registerAs' value={registerAs} onChange={(e) => setRegisterAs(e.target.value)}required>
+                            <option>Doctor</option>
+                            <option>Patience</option>
+                            <option>Hospital</option>
+                          </select>
+                       </div>
+                       <div className='license'>
+                           <label htmlFor='licenseNumber'>License Number</label>
+                           <input type='text' id='licenseNumber' name='licenseNumber' value={licenseNumber} onChange={(e) => setLicenseNumber(e.target.value)} />
+                       </div>
+                   </div>
                   
                    <div className='for-password'>
                        <div className='password'>
@@ -66,12 +82,12 @@ function Signup(props) {
                           <input type='text' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                        </div>
                    </div>
-                   <div>
+                   <div className='accept'>
                       <input type='checkbox' checked={acceptTerms} onClick={(e) => setAcceptTerms(e.change.value)} />
                       <label>I accept all <a href=''>terms & condition</a></label>
                    </div>
                 </form>
-                <div>
+                <div className='submit-button'>
                     <button className='proceed'>CREATE ACCOUNT</button>
                 </div>
                 <footer className='goto-login' onClick={() => props.onFormSwitch("login")}>

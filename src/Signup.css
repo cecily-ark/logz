@@ -47,6 +47,11 @@
     outline: none;
     background-color: transparent;
 }
+.reg{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
 .for-password{
     display: flex;
     justify-content: space-between;
